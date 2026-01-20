@@ -211,10 +211,23 @@
               <p>Tell us what you are managing and what you want to improve. We will follow up.</p>
             </div>
             <div class="contact-details">
-              <p><strong>Email:</strong> hello@celytics.com</p>
             </div>
           </div>
-          <form class="contact-form">
+          <form
+            name="contact"
+            method="POST"
+            data-netlify="true"
+            netlify-honeypot="bot-field"
+            class="contact-form"
+          >
+            <input type="hidden" name="form-name" value="contact" />
+            <input type="hidden" name="subject" value="New Celytics contact form submission" />
+            <p hidden>
+              <label>
+                Don't fill this out if you're human:
+                <input name="bot-field" />
+              </label>
+            </p>
             <label>
               Name
               <input type="text" name="name" placeholder="Your name" required />
